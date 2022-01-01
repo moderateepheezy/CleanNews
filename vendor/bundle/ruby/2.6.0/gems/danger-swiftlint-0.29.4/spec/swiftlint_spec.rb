@@ -1,0 +1,72 @@
+# frozen_string_literal: true
+
+require File.expand_path('../spec_helper', __FILE__)
+require_relative '../ext/swiftlint/swiftlint'
+
+describe Swiftlint do
+  let(:swiftlint) { Swiftlint.new }
+  it 'installed? works based on bin/swiftlint file' do
+    expect(File).to receive(:exist?).with(%r{/bin\/swiftlint}).and_return(true)
+    expect(swiftlint.installed?).to be_truthy
+
+    expect(File).to receive(:exist?).with(%r{bin\/swiftlint}).and_return(false)
+    expect(swiftlint.installed?).to be_falsy
+  end
+
+  context 'with binary_path' do
+    let(:binary_path) { '/path/to/swiftlint' }
+    let(:swiftlint) { Swiftlint.new(binary_path) }
+    it 'installed? works based on specific path' do
+      expect(File).to receive(:exist?).with(binary_path).and_return(true)
+      expect(swiftlint.installed?).to be_truthy
+
+      expect(File).to receive(:exist?).with(binary_path).and_return(false)
+      expect(swiftlint.installed?).to be_falsy
+    end
+  end
+
+  it 'changes directory when a pwd option is specified' do
+    expect(Dir).to receive(:chdir) do |*args, &block|
+      expect(args).to match_array([Dir.pwd])
+      expect(block).not_to be_nil
+    end
+    swiftlint.run('lint', '', pwd: Dir.pwd)
+  end
+
+  it 'does not change directory when no pwd option is specified' do
+    allow(swiftlint).to receive(:`)
+    expect(Dir).not_to receive(:chdir)
+    swiftlint.run('lint', '')
+  end
+
+  it 'runs lint by default with options being optional' do
+    expect(swiftlint).to receive(:`).with(including('swiftlint lint'))
+    swiftlint.run('lint', '')
+  end
+
+  it 'runs accepting symbolized options' do
+    cmd = 'swiftlint lint --no-use-stdin  --cache-path /path --enable-all-rules'
+    expect(swiftlint).to receive(:`).with(including(cmd))
+
+    swiftlint.run('lint',
+                  '',
+                  use_stdin: false,
+                  cache_path: '/path',
+                  enable_all_rules: true)
+  end
+
+  it 'runs accepting options with env' do
+    cmd = 'swiftlint lint --no-use-stdin'
+    expect(swiftlint).to receive(:`).with(including(cmd))
+    expect(swiftlint).to receive(:update_env).with(
+      { 'SCRIPT_INPUT_FILE_COUNT' => '1',
+        'SCRIPT_INPUT_FILE_0' => 'File.swift' })
+    expect(swiftlint).to receive(:restore_env)
+
+    swiftlint.run('lint',
+                  '',
+                  { use_stdin: false },
+                  { 'SCRIPT_INPUT_FILE_COUNT' => '1',
+                    'SCRIPT_INPUT_FILE_0' => 'File.swift' })
+  end
+end

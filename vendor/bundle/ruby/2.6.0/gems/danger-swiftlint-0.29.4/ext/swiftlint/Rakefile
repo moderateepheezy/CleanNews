@@ -1,0 +1,23 @@
+# frozen_string_literal: true
+
+require_relative '../../lib/version'
+
+namespace :swiftlint do
+  desc 'Download and install swiftlint tool'
+  task :install do
+    next if ENV['DANGER_SKIP_SWIFTLINT_INSTALL'] == 'YES'
+
+    REPO = 'https://github.com/realm/SwiftLint'
+    VERSION = ENV['SWIFTLINT_VERSION'] || DangerSwiftlint::SWIFTLINT_VERSION
+    ASSET = 'portable_swiftlint.zip'
+    URL = "#{REPO}/releases/download/#{VERSION}/#{ASSET}"
+    DESTINATION = File.expand_path(File.join(File.dirname(__FILE__), 'bin'))
+    SCRIPT_PATH = File.expand_path(File.join(File.dirname(__FILE__)))
+    SWIFTLINT_MD5_HASH = DangerSwiftlint::SWIFTLINT_HASH
+
+    puts "Downloading swiftlint@#{VERSION}"
+    sh "#{SCRIPT_PATH}/downloadSwiftlint.sh -u #{URL} -d #{DESTINATION} -a #{ASSET} -dh #{SWIFTLINT_MD5_HASH}"
+  end
+end
+
+task default: 'swiftlint:install'

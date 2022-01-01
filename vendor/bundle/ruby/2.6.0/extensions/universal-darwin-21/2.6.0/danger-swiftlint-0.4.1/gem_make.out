@@ -1,0 +1,13 @@
+current directory: /Users/simpumind/Desktop/Projects Bunker/CleanNews/vendor/bundle/ruby/2.6.0/gems/danger-swiftlint-0.4.1/ext/swiftlint
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/bin/ruby -rrubygems /Users/simpumind/Desktop/Projects\ Bunker/CleanNews/vendor/bundle/ruby/2.6.0/gems/rake-13.0.6/exe/rake RUBYARCHDIR\=/Users/simpumind/Desktop/Projects\ Bunker/CleanNews/vendor/bundle/ruby/2.6.0/extensions/universal-darwin-21/2.6.0/danger-swiftlint-0.4.1 RUBYLIBDIR\=/Users/simpumind/Desktop/Projects\ Bunker/CleanNews/vendor/bundle/ruby/2.6.0/extensions/universal-darwin-21/2.6.0/danger-swiftlint-0.4.1
+mkdir -p /Users/simpumind/Desktop/Projects Bunker/CleanNews/vendor/bundle/ruby/2.6.0/gems/danger-swiftlint-0.4.1/ext/swiftlint/bin && curl -s -L https://github.com/realm/SwiftLint/releases/download/0.16.1/portable_swiftlint.zip -o portable_swiftlint.zip && unzip -q portable_swiftlint.zip -d /Users/simpumind/Desktop/Projects Bunker/CleanNews/vendor/bundle/ruby/2.6.0/gems/danger-swiftlint-0.4.1/ext/swiftlint/bin && rm portable_swiftlint.zip
+Downloading swiftlint@0.16.1
+caution: filename not matched:  Bunker/CleanNews/vendor/bundle/ruby/2.6.0/gems/danger-swiftlint-0.4.1/ext/swiftlint/bin
+rake aborted!
+Command failed with status (11): [mkdir -p /Users/simpumind/Desktop/Projects...]
+/Users/simpumind/Desktop/Projects Bunker/CleanNews/vendor/bundle/ruby/2.6.0/gems/danger-swiftlint-0.4.1/ext/swiftlint/Rakefile:14:in `block (2 levels) in <top (required)>'
+/Users/simpumind/Desktop/Projects Bunker/CleanNews/vendor/bundle/ruby/2.6.0/gems/rake-13.0.6/exe/rake:27:in `<main>'
+Tasks: TOP => default => swiftlint:install
+(See full trace by running task with --trace)
+
+rake failed, exit code 1

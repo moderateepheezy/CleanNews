@@ -1,0 +1,4 @@
+--exclude Pods,Carthage
+--indent 4
+--trimwhitespace always
+--disable typeSugar,trailingClosures
