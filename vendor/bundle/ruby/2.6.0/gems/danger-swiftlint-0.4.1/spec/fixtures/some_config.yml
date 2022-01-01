@@ -1,8 +1,0 @@
-disabled_rules:
-  - todo
-
-included:
-  - an/included/folder
-
-excluded:
-  - excluded_dir

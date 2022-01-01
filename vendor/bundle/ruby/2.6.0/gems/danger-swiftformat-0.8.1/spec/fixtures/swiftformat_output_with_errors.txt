@@ -1,8 +1,0 @@
-Running SwiftFormat...
-(lint mode - no files will be changed.)
-spec/fixtures/1_BadFile.swift:3:1: warning: (spaceAroundOperators) Add or remove space around operators or delimiters.
-spec/fixtures/1_BadFile.swift:4:1: warning: (spaceInsideParens) Remove space inside parentheses.
-spec/fixtures/1_BadFile.swift:5:1: warning: (indent) Indent code in accordance with the scope level.
-SwiftFormat completed in 0.02s.
-Source input did not pass lint check.
-1/3 files require formatting.
