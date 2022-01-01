@@ -45,3 +45,5 @@ fastlane/test_output
 ###
 BuildTools/.build
 BuildTools/.swiftpm
+.bundle
+vendor
