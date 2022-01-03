@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         AppAppearance.applyStyles()
 
-        let viewController = DemoViewController(view: DemoView())
+        let viewController = MenuViewController(view: MenuView())
         let nav = UINavigationController(rootViewController: viewController)
         window?.rootViewController = nav
         window?.makeKeyAndVisible()

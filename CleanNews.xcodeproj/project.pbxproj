@@ -20,9 +20,20 @@
 		940595CF277FDB0D00630A61 /*  UIViewController+AddBehaviors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940595CE277FDB0D00630A61 /*  UIViewController+AddBehaviors.swift */; };
 		940595D2277FDCFF00630A61 /* NavigationBarStyleBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940595D1277FDCFF00630A61 /* NavigationBarStyleBehavior.swift */; };
 		940595D4277FDEFD00630A61 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940595D3277FDEFC00630A61 /* AppAppearance.swift */; };
+		94578F1A2782AFD20009F25C /* NavigationBarTintColorBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94578F192782AFD20009F25C /* NavigationBarTintColorBehaviour.swift */; };
+		94578F1C2782B3DF0009F25C /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94578F1B2782B3DE0009F25C /* UIDevice+Extension.swift */; };
+		94578F1F2782B6960009F25C /* DeviceGuru in Frameworks */ = {isa = PBXBuildFile; productRef = 94578F1E2782B6960009F25C /* DeviceGuru */; };
 		94B4FF17277FEA9D00D126A9 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B4FF16277FEA9D00D126A9 /* BaseView.swift */; };
-		94B4FF1A277FF07D00D126A9 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B4FF19277FF07D00D126A9 /* DemoViewController.swift */; };
 		94B4FF1C277FF15300D126A9 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B4FF1B277FF15300D126A9 /* UIView+Extension.swift */; };
+		94B4FF20278281D400D126A9 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B4FF1F278281D400D126A9 /* MenuViewController.swift */; };
+		94B4FF222782854400D126A9 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B4FF212782854400D126A9 /* MenuView.swift */; };
+		94B4FF2427828E4900D126A9 /* UIEdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B4FF2327828E4900D126A9 /* UIEdgeInsets+Extension.swift */; };
+		94B4FF262782908800D126A9 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B4FF252782908800D126A9 /* MenuCell.swift */; };
+		94B4FF282782909F00D126A9 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B4FF272782909F00D126A9 /* CollectionViewCell.swift */; };
+		94B4FF2A278293CF00D126A9 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94B4FF29278293CF00D126A9 /* Colors.xcassets */; };
+		94B4FF2C278294DB00D126A9 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B4FF2B278294DB00D126A9 /* UIColor+Extension.swift */; };
+		94B4FF2E278297A400D126A9 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B4FF2D278297A400D126A9 /* UICollectionView+Extension.swift */; };
+		94B4FF312782A16F00D126A9 /* MenuDividerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B4FF302782A16F00D126A9 /* MenuDividerCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,9 +71,19 @@
 		940595CE277FDB0D00630A61 /*  UIViewController+AddBehaviors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " UIViewController+AddBehaviors.swift"; sourceTree = "<group>"; };
 		940595D1277FDCFF00630A61 /* NavigationBarStyleBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarStyleBehavior.swift; sourceTree = "<group>"; };
 		940595D3277FDEFC00630A61 /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
+		94578F192782AFD20009F25C /* NavigationBarTintColorBehaviour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTintColorBehaviour.swift; sourceTree = "<group>"; };
+		94578F1B2782B3DE0009F25C /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		94B4FF16277FEA9D00D126A9 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
-		94B4FF19277FF07D00D126A9 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		94B4FF1B277FF15300D126A9 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		94B4FF1F278281D400D126A9 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		94B4FF212782854400D126A9 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		94B4FF2327828E4900D126A9 /* UIEdgeInsets+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Extension.swift"; sourceTree = "<group>"; };
+		94B4FF252782908800D126A9 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		94B4FF272782909F00D126A9 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		94B4FF29278293CF00D126A9 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		94B4FF2B278294DB00D126A9 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		94B4FF2D278297A400D126A9 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		94B4FF302782A16F00D126A9 /* MenuDividerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDividerCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94578F1F2782B6960009F25C /* DeviceGuru in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,7 +139,6 @@
 				940595C6277FC97000630A61 /* Data */,
 				940595BF277FC80000630A61 /* Presentation */,
 				940595C5277FC90300630A61 /* Resources */,
-				94B4FF19277FF07D00D126A9 /* DemoViewController.swift */,
 			);
 			path = CleanNews;
 			sourceTree = "<group>";
@@ -163,8 +184,7 @@
 				940595C9277FD07500630A61 /* Utils */,
 				94B4FF18277FEF3700D126A9 /* BaseClasses */,
 				940595D0277FDB5700630A61 /* Behaviours */,
-				940595C1277FC88500630A61 /* Onboarding */,
-				940595C0277FC81F00630A61 /* Feeds */,
+				94B4FF1D27827E0C00D126A9 /* Scenes */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -172,6 +192,7 @@
 		940595C0277FC81F00630A61 /* Feeds */ = {
 			isa = PBXGroup;
 			children = (
+				94B4FF1E278281B400D126A9 /* Menu */,
 			);
 			path = Feeds;
 			sourceTree = "<group>";
@@ -211,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				9405958B277E77D800630A61 /* Assets.xcassets */,
+				94B4FF29278293CF00D126A9 /* Colors.xcassets */,
 				9405958D277E77D800630A61 /* LaunchScreen.storyboard */,
 				94059590277E77D800630A61 /* Info.plist */,
 			);
@@ -255,6 +277,10 @@
 			children = (
 				940595CE277FDB0D00630A61 /*  UIViewController+AddBehaviors.swift */,
 				94B4FF1B277FF15300D126A9 /* UIView+Extension.swift */,
+				94B4FF2327828E4900D126A9 /* UIEdgeInsets+Extension.swift */,
+				94B4FF2B278294DB00D126A9 /* UIColor+Extension.swift */,
+				94B4FF2D278297A400D126A9 /* UICollectionView+Extension.swift */,
+				94578F1B2782B3DE0009F25C /* UIDevice+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -263,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				940595D1277FDCFF00630A61 /* NavigationBarStyleBehavior.swift */,
+				94578F192782AFD20009F25C /* NavigationBarTintColorBehaviour.swift */,
 			);
 			path = Behaviours;
 			sourceTree = "<group>";
@@ -272,8 +299,37 @@
 			children = (
 				94059583277E77D500630A61 /* BaseViewController.swift */,
 				94B4FF16277FEA9D00D126A9 /* BaseView.swift */,
+				94B4FF272782909F00D126A9 /* CollectionViewCell.swift */,
 			);
 			path = BaseClasses;
+			sourceTree = "<group>";
+		};
+		94B4FF1D27827E0C00D126A9 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				940595C1277FC88500630A61 /* Onboarding */,
+				940595C0277FC81F00630A61 /* Feeds */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		94B4FF1E278281B400D126A9 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				94B4FF2F2782A15F00D126A9 /* Cells */,
+				94B4FF1F278281D400D126A9 /* MenuViewController.swift */,
+				94B4FF212782854400D126A9 /* MenuView.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		94B4FF2F2782A15F00D126A9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				94B4FF252782908800D126A9 /* MenuCell.swift */,
+				94B4FF302782A16F00D126A9 /* MenuDividerCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +351,7 @@
 			);
 			name = CleanNews;
 			packageProductDependencies = (
+				94578F1E2782B6960009F25C /* DeviceGuru */,
 			);
 			productName = CleanNews;
 			productReference = 9405957C277E77D500630A61 /* CleanNews.app */;
@@ -369,6 +426,7 @@
 			);
 			mainGroup = 94059573277E77D500630A61;
 			packageReferences = (
+				94578F1D2782B6960009F25C /* XCRemoteSwiftPackageReference "DeviceGuru" */,
 			);
 			productRefGroup = 9405957D277E77D500630A61 /* Products */;
 			projectDirPath = "";
@@ -386,6 +444,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94B4FF2A278293CF00D126A9 /* Colors.xcassets in Resources */,
 				9405958F277E77D800630A61 /* LaunchScreen.storyboard in Resources */,
 				9405958C277E77D800630A61 /* Assets.xcassets in Resources */,
 			);
@@ -451,17 +510,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94B4FF2E278297A400D126A9 /* UICollectionView+Extension.swift in Sources */,
+				94578F1C2782B3DF0009F25C /* UIDevice+Extension.swift in Sources */,
 				94B4FF1C277FF15300D126A9 /* UIView+Extension.swift in Sources */,
 				940595CB277FD0A100630A61 /* Creatable.swift in Sources */,
 				94059584277E77D500630A61 /* BaseViewController.swift in Sources */,
 				94059580277E77D500630A61 /* AppDelegate.swift in Sources */,
+				94B4FF2C278294DB00D126A9 /* UIColor+Extension.swift in Sources */,
+				94B4FF2427828E4900D126A9 /* UIEdgeInsets+Extension.swift in Sources */,
 				940595CF277FDB0D00630A61 /*  UIViewController+AddBehaviors.swift in Sources */,
 				9405958A277E77D500630A61 /* CleanNews.xcdatamodeld in Sources */,
 				94059582277E77D500630A61 /* SceneDelegate.swift in Sources */,
+				94B4FF222782854400D126A9 /* MenuView.swift in Sources */,
+				94578F1A2782AFD20009F25C /* NavigationBarTintColorBehaviour.swift in Sources */,
+				94B4FF20278281D400D126A9 /* MenuViewController.swift in Sources */,
+				94B4FF312782A16F00D126A9 /* MenuDividerCell.swift in Sources */,
+				94B4FF282782909F00D126A9 /* CollectionViewCell.swift in Sources */,
 				94B4FF17277FEA9D00D126A9 /* BaseView.swift in Sources */,
+				94B4FF262782908800D126A9 /* MenuCell.swift in Sources */,
 				940595D2277FDCFF00630A61 /* NavigationBarStyleBehavior.swift in Sources */,
 				940595D4277FDEFD00630A61 /* AppAppearance.swift in Sources */,
-				94B4FF1A277FF07D00D126A9 /* DemoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -815,6 +883,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		94578F1D2782B6960009F25C /* XCRemoteSwiftPackageReference "DeviceGuru" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/InderKumarRathore/DeviceGuru";
+			requirement = {
+				kind = exactVersion;
+				version = 7.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		94578F1E2782B6960009F25C /* DeviceGuru */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 94578F1D2782B6960009F25C /* XCRemoteSwiftPackageReference "DeviceGuru" */;
+			productName = DeviceGuru;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		94059588277E77D500630A61 /* CleanNews.xcdatamodeld */ = {

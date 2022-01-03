@@ -9,7 +9,7 @@ import UIKit
 
 enum AppAppearance {
     static func applyStyles() {
-        UINavigationBar.appearance().barTintColor = .white
+        UINavigationBar.appearance().barTintColor = .skyWhite
         UINavigationBar.appearance().tintColor = .black
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.black]
     }

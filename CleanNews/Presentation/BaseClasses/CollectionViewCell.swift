@@ -1,13 +1,13 @@
 //
-//  BaseView.swift
+//  CollectionViewCell.swift
 //  CleanNews
 //
-//  Created by Afees Lawal on 01/01/2022.
+//  Created by Afees Lawal on 03/01/2022.
 //
 
 import UIKit
 
-class BaseView: UIView {
+class CollectionViewCell: UICollectionViewCell {
     // MARK: - LifeCylce
 
     override init(frame: CGRect) {
@@ -21,14 +21,6 @@ class BaseView: UIView {
     }
 
     // MARK: - Internal
-
-    var withAction: (() -> Void)? {
-        didSet {
-            guard withAction != nil else { return }
-            isUserInteractionEnabled = true
-            addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(performAction)))
-        }
-    }
 
     func setupViewHeirachy() { abstractMethod() }
 
@@ -44,12 +36,4 @@ class BaseView: UIView {
         setupConstraints()
         setupProperties()
     }
-
-    @objc private func performAction() {
-        withAction?()
-    }
-}
-
-func abstractMethod() -> Never {
-    fatalError("this method should be overriden")
 }
