@@ -17,7 +17,6 @@ final class MenuView: UICollectionView {
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
-        // the value for the groupSize doesn't matter
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(Constants.sizeFractionalWidth),
             heightDimension: .estimated(Constants.groupSizeEstimatedHeightDimension)

@@ -10,7 +10,7 @@ import UIKit
 class BaseViewController<CustomView: UIView>: UIViewController {
     // MARK: - LifeCylce
 
-    init(view: CustomView) {
+    init(view: CustomView = CustomView()) {
         customView = view
         super.init(nibName: nil, bundle: nil)
     }

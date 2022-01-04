@@ -13,5 +13,6 @@ struct NavigationBarTintColorBehaviour: ViewControllerLifecycleBehavior {
     func viewDidLoad(viewController: UIViewController) {
         viewController.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: tintColor]
         viewController.navigationController?.navigationBar.barTintColor = tintColor
+        viewController.navigationController?.navigationBar.tintColor = tintColor
     }
 }

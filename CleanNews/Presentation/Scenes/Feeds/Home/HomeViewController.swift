@@ -32,7 +32,7 @@ final class HomeViewController: BaseViewController<HomeView> {
             NavigationBarStyleBehavior(barStyle: .dark),
             NavigationBarTintColorBehaviour(tintColor: .primaryColor),
             NavigationBarWithTransparentBehaviour(),
-            NavigationBarWithLineBehaviour(barStyle: .dark),
+            NavigationBarWithLineBehaviour(),
         ])
     }
 

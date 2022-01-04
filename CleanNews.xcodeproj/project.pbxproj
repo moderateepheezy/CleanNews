@@ -33,6 +33,9 @@
 		94578F332783D6DE0009F25C /* NavigationBarWithTransparentBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94578F322783D6DE0009F25C /* NavigationBarWithTransparentBehaviour.swift */; };
 		94578F352783DE9D0009F25C /* NavigationBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94578F342783DE9D0009F25C /* NavigationBarStyle.swift */; };
 		94578F372783DED60009F25C /* NavigationBarWithLineBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94578F362783DED60009F25C /* NavigationBarWithLineBehaviour.swift */; };
+		94578F3A27847EF10009F25C /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94578F3927847EF10009F25C /* CategoriesViewController.swift */; };
+		94578F3C27847EFD0009F25C /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94578F3B27847EFD0009F25C /* CategoriesView.swift */; };
+		94578F3E2784809F0009F25C /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94578F3D2784809F0009F25C /* CategoryCell.swift */; };
 		94B4FF17277FEA9D00D126A9 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B4FF16277FEA9D00D126A9 /* BaseView.swift */; };
 		94B4FF1C277FF15300D126A9 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B4FF1B277FF15300D126A9 /* UIView+Extension.swift */; };
 		94B4FF20278281D400D126A9 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B4FF1F278281D400D126A9 /* MenuViewController.swift */; };
@@ -93,6 +96,9 @@
 		94578F322783D6DE0009F25C /* NavigationBarWithTransparentBehaviour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarWithTransparentBehaviour.swift; sourceTree = "<group>"; };
 		94578F342783DE9D0009F25C /* NavigationBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarStyle.swift; sourceTree = "<group>"; };
 		94578F362783DED60009F25C /* NavigationBarWithLineBehaviour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarWithLineBehaviour.swift; sourceTree = "<group>"; };
+		94578F3927847EF10009F25C /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		94578F3B27847EFD0009F25C /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
+		94578F3D2784809F0009F25C /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		94B4FF16277FEA9D00D126A9 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		94B4FF1B277FF15300D126A9 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		94B4FF1F278281D400D126A9 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +221,7 @@
 			children = (
 				94B4FF2F2782A15F00D126A9 /* Cells */,
 				94B4FF1E278281B400D126A9 /* Menu */,
+				94578F3827847ECC0009F25C /* Categories */,
 				94578F202782C3080009F25C /* Home */,
 			);
 			path = Feeds;
@@ -340,6 +347,15 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		94578F3827847ECC0009F25C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				94578F3927847EF10009F25C /* CategoriesViewController.swift */,
+				94578F3B27847EFD0009F25C /* CategoriesView.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		94B4FF18277FEF3700D126A9 /* BaseClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +390,7 @@
 				94B4FF252782908800D126A9 /* MenuCell.swift */,
 				94B4FF302782A16F00D126A9 /* MenuDividerCell.swift */,
 				94578F25278322E50009F25C /* FeedsCell.swift */,
+				94578F3D2784809F0009F25C /* CategoryCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -569,8 +586,10 @@
 				94578F26278322E50009F25C /* FeedsCell.swift in Sources */,
 				94578F222782C31E0009F25C /* HomeViewController.swift in Sources */,
 				94059580277E77D500630A61 /* AppDelegate.swift in Sources */,
+				94578F3A27847EF10009F25C /* CategoriesViewController.swift in Sources */,
 				94B4FF2C278294DB00D126A9 /* UIColor+Extension.swift in Sources */,
 				94B4FF2427828E4900D126A9 /* UIEdgeInsets+Extension.swift in Sources */,
+				94578F3C27847EFD0009F25C /* CategoriesView.swift in Sources */,
 				940595CF277FDB0D00630A61 /*  UIViewController+AddBehaviors.swift in Sources */,
 				94578F2927832F9D0009F25C /* PaddingLabel.swift in Sources */,
 				9405958A277E77D500630A61 /* CleanNews.xcdatamodeld in Sources */,
@@ -586,6 +605,7 @@
 				94B4FF262782908800D126A9 /* MenuCell.swift in Sources */,
 				940595D2277FDCFF00630A61 /* NavigationBarStyleBehavior.swift in Sources */,
 				940595D4277FDEFD00630A61 /* AppAppearance.swift in Sources */,
+				94578F3E2784809F0009F25C /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

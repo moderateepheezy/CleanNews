@@ -109,5 +109,9 @@ final class MenuViewController: BaseViewController<MenuView> {
 extension MenuViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+        if indexPath.item == 1 {
+            let viewController = CategoriesViewController(view: CategoriesView())
+            navigationController?.pushViewController(viewController, animated: true)
+        }
     }
 }
