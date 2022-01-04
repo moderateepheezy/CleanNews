@@ -9,6 +9,12 @@ import UIKit
 
 extension UIColor {
     static let skyWhite = UIColor(named: "skyWhite") ?? .white
-    static let secondaryColor = UIColor(named: "secondaryColor") ?? .black
-    static let reddit = UIColor(named: "reddit") ?? .blue
+    static let primaryColor = UIColor(named: "primaryColor") ?? .black
+    static let darkNavBarDivider = UIColor(named: "darkNavBarDivider") ?? .lightGray
+    static let lightNavBarDivider = UIColor(named: "lightNavBarDivider") ?? .darkGray
+    static let primaryBackgroundColor = UIColor(named: "backgroundColor") ?? .lightGray.withAlphaComponent(0.5)
+    static let secondaryBackgroundColor = UIColor(named: "secondaryBackgroundColor") ?? .darkGray
+
+    // Category
+    static let business = UIColor(named: "business") ?? .green
 }

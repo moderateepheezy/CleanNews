@@ -57,9 +57,10 @@ final class MenuView: UICollectionView {
     }
 
     private func setup() {
-        backgroundColor = .secondaryColor
+        backgroundColor = .primaryColor
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
+        isScrollEnabled = false
         contentInset.top = Constants.contentTopInset
         registerCell(ofType: MenuCell.self)
         registerCell(ofType: MenuDividerCell.self)

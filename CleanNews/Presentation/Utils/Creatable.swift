@@ -10,10 +10,10 @@ import UIKit
 protocol Creatable: UIView { init() }
 
 extension Creatable {
-    static func create(createOn: (Self) -> Void) -> Self {
+    static func create(handler: (Self) -> Void) -> Self {
         let view = Self(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        createOn(view)
+        handler(view)
         return view
     }
 

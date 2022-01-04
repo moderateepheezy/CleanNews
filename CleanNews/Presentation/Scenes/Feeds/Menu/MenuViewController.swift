@@ -10,34 +10,8 @@ import UIKit
 final class MenuViewController: BaseViewController<MenuView> {
     // MARK: - Internal
 
-    enum MainMenu: String, CaseIterable {
-        case home = "Home"
-        case categories = "Categories"
-        case history = "History"
-        case bookmarks = "Bookmarks"
-        case subscription = "Subscription"
-        case help = "Get Help"
-    }
-
-    enum OtherMenu: String, CaseIterable {
-        case settings = "Settings"
-        case signout = "Signout"
-    }
-
-    enum MenuSection: CaseIterable {
-        case mainMenus
-        case divider
-        case otherMenus
-    }
-
-    enum MenuItem: Hashable {
-        case mainMenu(MainMenu)
-        case divider
-        case otherMenu(OtherMenu)
-    }
-
     override func addViewControllerBehaviors() {
-        addBehaviors([NavigationBarStyleBehavior(barStyle: .light)])
+        addBehaviors([NavigationBarStyleBehavior(barStyle: .light), NavigationBarWithTransparentBehaviour()])
     }
 
     // MARK: - LifeCycle
@@ -46,14 +20,40 @@ final class MenuViewController: BaseViewController<MenuView> {
         super.viewDidLoad()
         customView.delegate = self
         setupNavigationItem()
-        configureDiffableDataSource()
+        makeDiffableDataSource()
     }
 
     // MARK: - Private
 
-    private(set) var dataSource: UICollectionViewDiffableDataSource<MenuSection, MenuItem>!
+    private var dataSource: UICollectionViewDiffableDataSource<MenuSection, MenuItem>!
 
-    private func configureDiffableDataSource() {
+    private enum MainMenu: String, CaseIterable {
+        case home = "Home"
+        case categories = "Categories"
+        case history = "History"
+        case bookmarks = "Bookmarks"
+        case subscription = "Subscription"
+        case help = "Get Help"
+    }
+
+    private enum OtherMenu: String, CaseIterable {
+        case settings = "Settings"
+        case signout = "Signout"
+    }
+
+    private enum MenuSection: CaseIterable {
+        case mainMenus
+        case divider
+        case otherMenus
+    }
+
+    private enum MenuItem: Hashable {
+        case mainMenu(MainMenu)
+        case divider
+        case otherMenu(OtherMenu)
+    }
+
+    private func makeDiffableDataSource() {
         let dataSource = UICollectionViewDiffableDataSource<MenuSection, MenuItem>(
             collectionView: customView
         ) { (collectionView: UICollectionView, indexPath: IndexPath, item: MenuItem) -> UICollectionViewCell? in
@@ -99,7 +99,9 @@ final class MenuViewController: BaseViewController<MenuView> {
         navigationItem.rightBarButtonItem = closeBarButtonItem
     }
 
-    @objc private func onCloseTapped() {}
+    @objc private func onCloseTapped() {
+        dismiss(animated: true)
+    }
 }
 
 // MARK: - UICollectionViewDelegate

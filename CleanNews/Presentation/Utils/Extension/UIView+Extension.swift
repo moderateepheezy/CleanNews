@@ -12,6 +12,11 @@ extension UIView {
     func addSubviews(_ views: [UIView]) {
         views.forEach(addSubview)
     }
+
+    func layoutable() -> Self {
+        translatesAutoresizingMaskIntoConstraints = false
+        return self
+    }
 }
 
 extension UIView {
