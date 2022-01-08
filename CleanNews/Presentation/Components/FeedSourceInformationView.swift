@@ -23,7 +23,7 @@ final class FeedSourceInformationView: BaseView {
     private let sourceAvatarImageView = UIImageView.create {
         $0.backgroundColor = .secondaryBackgroundColor
         $0.contentMode = .scaleAspectFit
-    }.withCornerRadius(Constants.sourceAvatarRadius)
+    }.applyCornerRadius(Constants.sourceAvatarRadius)
 
     private let sourceNameLabel = UILabel.create {
         $0.textColor = .primaryColor
@@ -37,7 +37,7 @@ final class FeedSourceInformationView: BaseView {
             horizontalInsets: Constants.categoryLabelHorizontalPadding
         )
         $0.clipsToBounds = true
-    }.withCornerRadius(Constants.categoryLabelRadius)
+    }.applyCornerRadius(Constants.categoryLabelRadius)
 
     // MARK: - Internal
 
@@ -62,6 +62,7 @@ final class FeedSourceInformationView: BaseView {
     }
 
     override func setupProperties() {
+        backgroundColor = .clear
         heightAnchor.constraint(equalToConstant: 19).isActive = true
     }
 

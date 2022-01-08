@@ -108,7 +108,10 @@ final class HomeViewController: BaseViewController<HomeView> {
         present(navVc, animated: true)
     }
 
-    @objc private func showBookmarksTapped() {}
+    @objc private func showBookmarksTapped() {
+        let viewController = BookmarksViewController(view: BookmarksView())
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 
     @objc private func searchTapped() {}
 }

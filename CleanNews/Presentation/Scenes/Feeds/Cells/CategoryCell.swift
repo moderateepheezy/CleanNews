@@ -26,7 +26,7 @@ final class CategoryCell: CollectionViewCell {
 
     private let categoryBarView = UIView.create {
         $0.constraintToConstant(Constants.categoryBarSize)
-    }.withCornerRadius(Constants.categoryBarRadius)
+    }.applyCornerRadius(Constants.categoryBarRadius)
 
     private let categoryTitleLabel = UILabel.create {
         $0.font = .systemFont(ofSize: 20)

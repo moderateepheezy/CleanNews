@@ -94,6 +94,7 @@ final class FeedInteractiveView: BaseView {
     }
 
     override func setupProperties() {
+        backgroundColor = .clear
         heightAnchor.constraint(equalToConstant: 24).isActive = true
     }
 

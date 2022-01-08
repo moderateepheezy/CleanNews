@@ -24,11 +24,9 @@ final class FeedDetailsView: BaseView {
         $0.backgroundColor = .secondaryBackgroundColor
         $0.clipsToBounds = true
         $0.heightAnchor.constraint(equalToConstant: Constants.feedImageHeight).isActive = true
-    }.withCornerRadius(Constants.feedImageCornerRadius)
+    }.applyCornerRadius(Constants.feedImageCornerRadius)
 
-    private let feedSourceInformationView = FeedSourceInformationView.create {
-        $0.backgroundColor = .clear
-    }
+    private let feedSourceInformationView = FeedSourceInformationView().layoutable()
 
     private let feedTitleLabel = UILabel.create {
         $0.textColor = .primaryColor
@@ -36,13 +34,11 @@ final class FeedDetailsView: BaseView {
         $0.font = .systemFont(ofSize: 26)
     }
 
-    private let feedInteractiveView = FeedInteractiveView.create {
-        $0.backgroundColor = .clear
-    }
+    private let feedInteractiveView = FeedInteractiveView().layoutable()
 
     private let categoryBarView = UIView.create {
         $0.constraintToConstant(Constants.categoryBarSize)
-    }.withCornerRadius(Constants.categoryBarRadius)
+    }.applyCornerRadius(Constants.categoryBarRadius)
 
     private lazy var categoryBarStackView = UIStackView(arrangedSubviews: [categoryBarView, UIView()]).configure {
         $0.spacing = 16

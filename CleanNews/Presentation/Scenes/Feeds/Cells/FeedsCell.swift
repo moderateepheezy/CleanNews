@@ -24,14 +24,14 @@ final class FeedsCell: CollectionViewCell {
     private let containerView = UIView.create {
         $0.backgroundColor = .skyWhite
         $0.clipsToBounds = true
-    }.withCornerRadius(Constants.containerRadius)
+    }.applyCornerRadius(Constants.containerRadius)
 
     private let feedSourceInformationView = FeedSourceInformationView().layoutable()
 
     private let feedImageView = UIImageView.create {
         $0.backgroundColor = .secondaryBackgroundColor
         $0.clipsToBounds = true
-    }.withCornerRadius(Constants.feedImageCornerRadius)
+    }.applyCornerRadius(Constants.feedImageCornerRadius)
 
     private let feedTitleLabel = UILabel.create {
         $0.textColor = .primaryColor

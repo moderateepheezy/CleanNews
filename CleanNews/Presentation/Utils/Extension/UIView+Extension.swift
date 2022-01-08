@@ -155,8 +155,10 @@ extension UIView {
     /// Returns view with provided corner radius
     ///
     /// - Returns: Adjusted view
-    func withCornerRadius(_ radius: CGFloat) -> Self {
+    func applyCornerRadius(_ radius: CGFloat, borderColor: UIColor = .clear, borderWidth: CGFloat = 0) -> Self {
         layer.cornerRadius = radius
+        layer.borderColor = borderColor.cgColor
+        layer.borderWidth = borderWidth
         return self
     }
 }
