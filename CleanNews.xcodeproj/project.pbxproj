@@ -20,6 +20,9 @@
 		940595CF277FDB0D00630A61 /*  UIViewController+AddBehaviors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940595CE277FDB0D00630A61 /*  UIViewController+AddBehaviors.swift */; };
 		940595D2277FDCFF00630A61 /* NavigationBarStyleBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940595D1277FDCFF00630A61 /* NavigationBarStyleBehavior.swift */; };
 		940595D4277FDEFD00630A61 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940595D3277FDEFC00630A61 /* AppAppearance.swift */; };
+		94327ADD27877D36001684BF /* FeedDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94327ADC27877D36001684BF /* FeedDetailsViewController.swift */; };
+		94327ADF27886F4D001684BF /* FeedDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94327ADE27886F4D001684BF /* FeedDetailsView.swift */; };
+		94440CFD27892C73006BA114 /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94440CFC27892C73006BA114 /* UIScrollView+Extension.swift */; };
 		94578F1A2782AFD20009F25C /* NavigationBarTintColorBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94578F192782AFD20009F25C /* NavigationBarTintColorBehaviour.swift */; };
 		94578F1C2782B3DF0009F25C /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94578F1B2782B3DE0009F25C /* UIDevice+Extension.swift */; };
 		94578F1F2782B6960009F25C /* DeviceGuru in Frameworks */ = {isa = PBXBuildFile; productRef = 94578F1E2782B6960009F25C /* DeviceGuru */; };
@@ -27,7 +30,7 @@
 		94578F242782C3280009F25C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94578F232782C3280009F25C /* HomeView.swift */; };
 		94578F26278322E50009F25C /* FeedsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94578F25278322E50009F25C /* FeedsCell.swift */; };
 		94578F2927832F9D0009F25C /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94578F2827832F9D0009F25C /* PaddingLabel.swift */; };
-		94578F2B27834C620009F25C /* FeedTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94578F2A27834C620009F25C /* FeedTopView.swift */; };
+		94578F2B27834C620009F25C /* FeedSourceInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94578F2A27834C620009F25C /* FeedSourceInformationView.swift */; };
 		94578F2D27835F0A0009F25C /* FeedInteractiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94578F2C27835F0A0009F25C /* FeedInteractiveView.swift */; };
 		94578F2F2783C2130009F25C /* LatestNewsSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94578F2E2783C2130009F25C /* LatestNewsSectionHeader.swift */; };
 		94578F332783D6DE0009F25C /* NavigationBarWithTransparentBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94578F322783D6DE0009F25C /* NavigationBarWithTransparentBehaviour.swift */; };
@@ -84,13 +87,16 @@
 		940595CE277FDB0D00630A61 /*  UIViewController+AddBehaviors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " UIViewController+AddBehaviors.swift"; sourceTree = "<group>"; };
 		940595D1277FDCFF00630A61 /* NavigationBarStyleBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarStyleBehavior.swift; sourceTree = "<group>"; };
 		940595D3277FDEFC00630A61 /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
+		94327ADC27877D36001684BF /* FeedDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailsViewController.swift; sourceTree = "<group>"; };
+		94327ADE27886F4D001684BF /* FeedDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailsView.swift; sourceTree = "<group>"; };
+		94440CFC27892C73006BA114 /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
 		94578F192782AFD20009F25C /* NavigationBarTintColorBehaviour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTintColorBehaviour.swift; sourceTree = "<group>"; };
 		94578F1B2782B3DE0009F25C /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		94578F212782C31E0009F25C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		94578F232782C3280009F25C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		94578F25278322E50009F25C /* FeedsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsCell.swift; sourceTree = "<group>"; };
 		94578F2827832F9D0009F25C /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
-		94578F2A27834C620009F25C /* FeedTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTopView.swift; sourceTree = "<group>"; };
+		94578F2A27834C620009F25C /* FeedSourceInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSourceInformationView.swift; sourceTree = "<group>"; };
 		94578F2C27835F0A0009F25C /* FeedInteractiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedInteractiveView.swift; sourceTree = "<group>"; };
 		94578F2E2783C2130009F25C /* LatestNewsSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestNewsSectionHeader.swift; sourceTree = "<group>"; };
 		94578F322783D6DE0009F25C /* NavigationBarWithTransparentBehaviour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarWithTransparentBehaviour.swift; sourceTree = "<group>"; };
@@ -219,6 +225,7 @@
 		940595C0277FC81F00630A61 /* Feeds */ = {
 			isa = PBXGroup;
 			children = (
+				94327ADB27877D04001684BF /* FeedDetails */,
 				94B4FF2F2782A15F00D126A9 /* Cells */,
 				94B4FF1E278281B400D126A9 /* Menu */,
 				94578F3827847ECC0009F25C /* Categories */,
@@ -311,6 +318,7 @@
 				94B4FF2B278294DB00D126A9 /* UIColor+Extension.swift */,
 				94B4FF2D278297A400D126A9 /* UICollectionView+Extension.swift */,
 				94578F1B2782B3DE0009F25C /* UIDevice+Extension.swift */,
+				94440CFC27892C73006BA114 /* UIScrollView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -327,6 +335,15 @@
 			path = Behaviours;
 			sourceTree = "<group>";
 		};
+		94327ADB27877D04001684BF /* FeedDetails */ = {
+			isa = PBXGroup;
+			children = (
+				94327ADC27877D36001684BF /* FeedDetailsViewController.swift */,
+				94327ADE27886F4D001684BF /* FeedDetailsView.swift */,
+			);
+			path = FeedDetails;
+			sourceTree = "<group>";
+		};
 		94578F202782C3080009F25C /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,7 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				94578F2827832F9D0009F25C /* PaddingLabel.swift */,
-				94578F2A27834C620009F25C /* FeedTopView.swift */,
+				94578F2A27834C620009F25C /* FeedSourceInformationView.swift */,
 				94578F2C27835F0A0009F25C /* FeedInteractiveView.swift */,
 				94578F2E2783C2130009F25C /* LatestNewsSectionHeader.swift */,
 			);
@@ -574,14 +591,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				94578F352783DE9D0009F25C /* NavigationBarStyle.swift in Sources */,
+				94327ADF27886F4D001684BF /* FeedDetailsView.swift in Sources */,
 				94B4FF2E278297A400D126A9 /* UICollectionView+Extension.swift in Sources */,
-				94578F2B27834C620009F25C /* FeedTopView.swift in Sources */,
+				94578F2B27834C620009F25C /* FeedSourceInformationView.swift in Sources */,
 				94578F1C2782B3DF0009F25C /* UIDevice+Extension.swift in Sources */,
 				94578F2F2783C2130009F25C /* LatestNewsSectionHeader.swift in Sources */,
 				94B4FF1C277FF15300D126A9 /* UIView+Extension.swift in Sources */,
 				940595CB277FD0A100630A61 /* Creatable.swift in Sources */,
 				94059584277E77D500630A61 /* BaseViewController.swift in Sources */,
 				94578F242782C3280009F25C /* HomeView.swift in Sources */,
+				94327ADD27877D36001684BF /* FeedDetailsViewController.swift in Sources */,
 				94578F2D27835F0A0009F25C /* FeedInteractiveView.swift in Sources */,
 				94578F26278322E50009F25C /* FeedsCell.swift in Sources */,
 				94578F222782C31E0009F25C /* HomeViewController.swift in Sources */,
@@ -602,6 +621,7 @@
 				94578F332783D6DE0009F25C /* NavigationBarWithTransparentBehaviour.swift in Sources */,
 				94B4FF282782909F00D126A9 /* CollectionViewCell.swift in Sources */,
 				94B4FF17277FEA9D00D126A9 /* BaseView.swift in Sources */,
+				94440CFD27892C73006BA114 /* UIScrollView+Extension.swift in Sources */,
 				94B4FF262782908800D126A9 /* MenuCell.swift in Sources */,
 				940595D2277FDCFF00630A61 /* NavigationBarStyleBehavior.swift in Sources */,
 				940595D4277FDEFD00630A61 /* AppAppearance.swift in Sources */,

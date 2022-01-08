@@ -14,15 +14,10 @@ extension UIColor {
     static let lightNavBarDivider = UIColor(named: "lightNavBarDivider") ?? .darkGray
     static let primaryBackgroundColor = UIColor(named: "backgroundColor") ?? .lightGray.withAlphaComponent(0.5)
     static let secondaryBackgroundColor = UIColor(named: "secondaryBackgroundColor") ?? .darkGray
+    static let contentTextColor = UIColor(named: "contentTextColor") ?? .lightGray
 
     // Category
     static let business = UIColor(named: "business") ?? .green
-}
-
-private extension CGFloat {
-    static func random() -> CGFloat {
-        CGFloat(arc4random()) / CGFloat(UInt32.max)
-    }
 }
 
 extension UIColor {
@@ -33,5 +28,11 @@ extension UIColor {
             blue: .random(),
             alpha: 1.0
         )
+    }
+}
+
+private extension CGFloat {
+    static func random() -> CGFloat {
+        CGFloat(arc4random()) / CGFloat(UInt32.max)
     }
 }

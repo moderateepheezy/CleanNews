@@ -26,7 +26,7 @@ final class FeedsCell: CollectionViewCell {
         $0.clipsToBounds = true
     }.withCornerRadius(Constants.containerRadius)
 
-    private let feedTopView = FeedTopView().layoutable()
+    private let feedSourceInformationView = FeedSourceInformationView().layoutable()
 
     private let feedImageView = UIImageView.create {
         $0.backgroundColor = .secondaryBackgroundColor
@@ -66,16 +66,16 @@ final class FeedsCell: CollectionViewCell {
 
     override func setupViewHeirachy() {
         addSubview(containerView)
-        containerView.addSubviews([feedTopView, feedImageView, feedTitleLabel, captionLabel, feedInteractiveView])
+        containerView.addSubviews([feedSourceInformationView, feedImageView, feedTitleLabel, captionLabel, feedInteractiveView])
     }
 
     override func setupConstraints() {
         containerView.constraintToSuperviewEdges()
 
-        feedTopView.constraintToEdges(of: containerView, excludingAnchors: [.bottom], withInsets: .allSides(Constants.spacing))
+        feedSourceInformationView.constraintToEdges(of: containerView, excludingAnchors: [.bottom], withInsets: .allSides(Constants.spacing))
 
         feedImageView.constraintToEdges(of: containerView, excludingAnchors: [.top, .bottom], withInsets: .allSides(Constants.spacing))
-        feedImageView.topAnchor.constraint(equalTo: feedTopView.bottomAnchor, constant: Constants.spacing).isActive = true
+        feedImageView.topAnchor.constraint(equalTo: feedSourceInformationView.bottomAnchor, constant: Constants.spacing).isActive = true
         feedImageHeightConstraint = feedImageView.heightAnchor.constraint(equalToConstant: Constants.feedImageRegularHeight)
         feedImageHeightConstraint.isActive = true
 
@@ -96,7 +96,7 @@ final class FeedsCell: CollectionViewCell {
         setSize(size)
         feedTitleLabel.text = "A road map for grinding and finishing stainless steel"
         captionLabel.text = "Usam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea aki"
-        feedTopView.setupWith(imageURL: "", sourceName: "VNN News", category: "Business", categoryColor: .business)
+        feedSourceInformationView.setupWith(imageURL: "", sourceName: "VNN News", category: "Business", categoryColor: .business)
         feedInteractiveView.setupWith(time: "1 hr ago")
     }
 }

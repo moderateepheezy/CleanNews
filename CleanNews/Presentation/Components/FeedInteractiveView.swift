@@ -97,7 +97,10 @@ final class FeedInteractiveView: BaseView {
         heightAnchor.constraint(equalToConstant: 24).isActive = true
     }
 
-    func setupWith(time: String) {
+    func setupWith(time: String, excludingActions: [Action] = []) {
         timeLabel.text = time
+        bookmarkButton.isHidden = excludingActions.contains(.bookmark)
+        shareButton.isHidden = excludingActions.contains(.share)
+        commentButton.isHidden = excludingActions.contains(.comment)
     }
 }

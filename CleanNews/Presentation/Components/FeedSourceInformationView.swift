@@ -1,5 +1,5 @@
 //
-//  FeedTopView.swift
+//  FeedSourceInformationView.swift
 //  CleanNews
 //
 //  Created by Afees Lawal on 03/01/2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class FeedTopView: BaseView {
+final class FeedSourceInformationView: BaseView {
     // MARK: - Private
 
     private enum Constants {
