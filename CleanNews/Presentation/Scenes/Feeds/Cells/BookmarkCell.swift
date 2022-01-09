@@ -15,9 +15,10 @@ final class BookmarkCell: CollectionViewCell {
         static let feedImageWidth: CGFloat = 96
         static let space8: CGFloat = 8
         static let space16: CGFloat = 16
+        static let deleteButtonWidth: CGFloat = 54
     }
 
-    private let containerView = UIView.create {
+    private let containerView = SwipeToRevealView(maxSwipe: Constants.deleteButtonWidth + 24).configure {
         $0.backgroundColor = .skyWhite
         $0.clipsToBounds = true
     }.applyCornerRadius(Constants.containerRadius)
@@ -28,23 +29,36 @@ final class BookmarkCell: CollectionViewCell {
         $0.widthAnchor.constraint(equalToConstant: Constants.feedImageWidth).isActive = true
     }.applyCornerRadius(Constants.containerRadius)
 
-    private let feedSourceInformationView = FeedSourceInformationView().layoutable()
-
-    private let feedInteractiveView = FeedInteractiveView().layoutable()
-
     private let feedTitleLabel = UILabel.create {
         $0.textColor = .primaryColor
         $0.numberOfLines = 2
         $0.font = .systemFont(ofSize: 14)
     }
 
+    private let deleteButton = UIButton.create {
+        $0.setImage(UIImage(named: "trash"), for: .normal)
+        $0.backgroundColor = .deleteButtonBackgroundColor.withAlphaComponent(0.08)
+        $0.widthAnchor.constraint(equalToConstant: Constants.deleteButtonWidth).isActive = true
+    }.applyCornerRadius(Constants.containerRadius)
+
+    private let feedSourceInformationView = FeedSourceInformationView().layoutable()
+
+    private let feedInteractiveView = FeedInteractiveView().layoutable()
+
+    // MARK: - Internal
+
+    override func prepareForReuse() {
+        contentView.frame = bounds
+    }
+
     override func setupViewHeirachy() {
-        addSubview(containerView)
+        addSubviews([deleteButton, containerView])
         containerView.addSubviews([feedImageView, feedSourceInformationView, feedTitleLabel, feedInteractiveView])
     }
 
     override func setupConstraints() {
         containerView.constraintToSuperviewEdges()
+        deleteButton.constraintToLayoutGuide(of: self, excludingAnchors: [.left])
         feedImageView.constraintToEdges(of: containerView, excludingAnchors: [.right], withInsets: .allSides(8))
 
         feedSourceInformationView.constraintToEdges(

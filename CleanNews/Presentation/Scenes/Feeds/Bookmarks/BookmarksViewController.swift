@@ -23,6 +23,10 @@ final class BookmarksViewController: BaseViewController<BookmarksView> {
         customView.collectionView.delegate = self
         setupNavigationItem()
         makeDiffableDataSource()
+
+        let panGesture = UIPanGestureRecognizer()
+        view.addGestureRecognizer(panGesture)
+        panGesture.delegate = self
     }
 
     override func addViewControllerBehaviors() {
@@ -41,7 +45,7 @@ final class BookmarksViewController: BaseViewController<BookmarksView> {
     private func makeDiffableDataSource() {
         let dataSource = UICollectionViewDiffableDataSource<BookmarksSection, BookmarksItem>(
             collectionView: customView.collectionView
-        ) { (collectionView: UICollectionView, indexPath: IndexPath, item: BookmarksItem) -> UICollectionViewCell? in
+        ) { collectionView, indexPath, item -> UICollectionViewCell? in
             switch item {
             case let .bookmark(bookmark):
                 let cell = collectionView.dequeueCell(ofType: BookmarkCell.self, for: indexPath)
@@ -82,5 +86,13 @@ extension BookmarksViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(collectionView.description)
         print(indexPath.item)
+    }
+}
+
+// MARK: - UIGestureRecognizerDelegate
+
+extension BookmarksViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith _: UIGestureRecognizer) -> Bool {
+        false
     }
 }

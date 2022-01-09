@@ -26,6 +26,7 @@
 		94440D0027892FD1006BA114 /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94440CFF27892FD1006BA114 /* BookmarksViewController.swift */; };
 		94440D0227892FDA006BA114 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94440D0127892FDA006BA114 /* BookmarksView.swift */; };
 		94440D0427893033006BA114 /* BookmarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94440D0327893033006BA114 /* BookmarkCell.swift */; };
+		94440D06278B2822006BA114 /* SwipeToRevealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94440D05278B2822006BA114 /* SwipeToRevealView.swift */; };
 		94578F1A2782AFD20009F25C /* NavigationBarTintColorBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94578F192782AFD20009F25C /* NavigationBarTintColorBehaviour.swift */; };
 		94578F1C2782B3DF0009F25C /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94578F1B2782B3DE0009F25C /* UIDevice+Extension.swift */; };
 		94578F1F2782B6960009F25C /* DeviceGuru in Frameworks */ = {isa = PBXBuildFile; productRef = 94578F1E2782B6960009F25C /* DeviceGuru */; };
@@ -96,6 +97,7 @@
 		94440CFF27892FD1006BA114 /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
 		94440D0127892FDA006BA114 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
 		94440D0327893033006BA114 /* BookmarkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCell.swift; sourceTree = "<group>"; };
+		94440D05278B2822006BA114 /* SwipeToRevealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeToRevealView.swift; sourceTree = "<group>"; };
 		94578F192782AFD20009F25C /* NavigationBarTintColorBehaviour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTintColorBehaviour.swift; sourceTree = "<group>"; };
 		94578F1B2782B3DE0009F25C /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		94578F212782C31E0009F25C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -376,6 +378,7 @@
 				94578F2A27834C620009F25C /* FeedSourceInformationView.swift */,
 				94578F2C27835F0A0009F25C /* FeedInteractiveView.swift */,
 				94578F2E2783C2130009F25C /* LatestNewsSectionHeader.swift */,
+				94440D05278B2822006BA114 /* SwipeToRevealView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				94327ADD27877D36001684BF /* FeedDetailsViewController.swift in Sources */,
 				94578F2D27835F0A0009F25C /* FeedInteractiveView.swift in Sources */,
 				94578F26278322E50009F25C /* FeedsCell.swift in Sources */,
+				94440D06278B2822006BA114 /* SwipeToRevealView.swift in Sources */,
 				94578F222782C31E0009F25C /* HomeViewController.swift in Sources */,
 				94059580277E77D500630A61 /* AppDelegate.swift in Sources */,
 				94578F3A27847EF10009F25C /* CategoriesViewController.swift in Sources */,

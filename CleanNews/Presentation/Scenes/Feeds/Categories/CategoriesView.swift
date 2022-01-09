@@ -42,9 +42,7 @@ final class CategoriesView: BaseView {
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
             group.interItemSpacing = .fixed(Constants.sectionItemSpacing)
 
-            let section = NSCollectionLayoutSection(group: group)
-
-            return section
+            return NSCollectionLayoutSection(group: group)
         }
 
         return layout

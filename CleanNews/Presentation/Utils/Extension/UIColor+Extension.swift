@@ -15,6 +15,7 @@ extension UIColor {
     static let primaryBackgroundColor = UIColor(named: "backgroundColor") ?? .lightGray.withAlphaComponent(0.5)
     static let secondaryBackgroundColor = UIColor(named: "secondaryBackgroundColor") ?? .darkGray
     static let contentTextColor = UIColor(named: "contentTextColor") ?? .lightGray
+    static let deleteButtonBackgroundColor = UIColor(named: "deleteButtonBackgroundColor") ?? .systemPink
 
     // Category
     static let business = UIColor(named: "business") ?? .green
