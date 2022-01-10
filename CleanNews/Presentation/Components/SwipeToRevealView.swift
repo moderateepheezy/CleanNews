@@ -59,7 +59,10 @@ final class SwipeToRevealView: UIView {
                 center.x = originalXCenter - maxSwipe
                 break
             }
-            guard center.x > originalXCenter - maxSwipe - swipeBufffer, center.x < originalXCenter - maxSwipe + swipeBufffer, velocity.x < highVelocity else {
+            guard center.x > originalXCenter - maxSwipe - swipeBufffer,
+                  center.x < originalXCenter - maxSwipe + swipeBufffer,
+                  velocity.x < highVelocity
+            else {
                 center.x = originalXCenter
                 break
             }

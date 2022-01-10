@@ -21,6 +21,10 @@ Carthage/Build/
 # .swiftpm
 
 .build/
+SourcePackages/
+
+## dotenv
+.env.*
 
 # fastlane
 #
