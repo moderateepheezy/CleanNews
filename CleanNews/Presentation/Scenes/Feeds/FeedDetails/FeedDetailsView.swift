@@ -118,12 +118,11 @@ final class FeedDetailsView: BaseView {
         backgroundColor = .primaryBackgroundColor
     }
 
-    func setupWith() {
-        let categoryColor = UIColor.random()
-        feedTitleLabel.text = "Maunt University Is Going Need-Blind In Admissions"
-        feedSourceInformationView.setupWith(imageURL: "", sourceName: "VNN News", category: "Education", categoryColor: categoryColor)
-        categoryBarView.backgroundColor = categoryColor
-        contentTextView.text = Array(1 ... 20).map { _ in "Usam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea aki\n" }.joined()
-        feedInteractiveView.setupWith(time: "4 hrs ago · 5 min read")
+    func setupWith(item: FeedsListItemViewModel) {
+        feedTitleLabel.text = item.newsTitle
+        feedSourceInformationView.setupWith(feedsListItemViewModel: item)
+        categoryBarView.backgroundColor = item.category.color
+        contentTextView.text = item.content
+        feedInteractiveView.setupWith(time: "\(item.dateTime) · 5 min read")
     }
 }

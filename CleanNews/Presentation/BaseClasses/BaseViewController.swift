@@ -28,6 +28,7 @@ class BaseViewController<CustomView: UIView>: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addViewControllerBehaviors()
+        bindViews()
         setupViewActions()
         bindViewModel()
     }
@@ -41,4 +42,6 @@ class BaseViewController<CustomView: UIView>: UIViewController {
     func setupViewActions() {}
 
     func bindViewModel() {}
+
+    func bindViews() {}
 }

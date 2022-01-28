@@ -23,6 +23,7 @@ final class FeedSourceInformationView: BaseView {
     private let sourceAvatarImageView = UIImageView.create {
         $0.backgroundColor = .secondaryBackgroundColor
         $0.contentMode = .scaleAspectFit
+        $0.clipsToBounds = true
     }.applyCornerRadius(Constants.sourceAvatarRadius)
 
     private let sourceNameLabel = UILabel.create {
@@ -66,11 +67,11 @@ final class FeedSourceInformationView: BaseView {
         heightAnchor.constraint(equalToConstant: 19).isActive = true
     }
 
-    func setupWith(imageURL: String, sourceName: String, category: String, categoryColor: UIColor) {
-        print(imageURL)
-        sourceNameLabel.text = sourceName
-        categoryLabel.text = category
-        categoryLabel.textColor = categoryColor
-        categoryLabel.backgroundColor = categoryColor.withAlphaComponent(0.08)
+    func setupWith(feedsListItemViewModel: FeedsListItemViewModel) {
+        sourceNameLabel.text = feedsListItemViewModel.sourceName
+        categoryLabel.text = feedsListItemViewModel.category.name
+        categoryLabel.textColor = feedsListItemViewModel.category.color
+        categoryLabel.backgroundColor = feedsListItemViewModel.category.color.withAlphaComponent(0.08)
+        sourceAvatarImageView.load(url: feedsListItemViewModel.sourceImageURL)
     }
 }

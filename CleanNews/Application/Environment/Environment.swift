@@ -31,7 +31,7 @@ enum Environment {
     }
 }
 
-func getCurrentConfig() -> String {
+private func getCurrentConfig() -> String {
     guard let currentConfiguration = Bundle.main.object(forInfoDictionaryKey: "Configuration") as? String
     else {
         fatalError("Cannot find Configuration")

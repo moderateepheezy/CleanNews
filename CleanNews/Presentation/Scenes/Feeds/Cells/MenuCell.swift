@@ -20,6 +20,7 @@ final class MenuCell: CollectionViewCell {
 
     override func setupViewHeirachy() {
         addSubview(menuTitleLabel)
+        print("C")
     }
 
     override func setupConstraints() {

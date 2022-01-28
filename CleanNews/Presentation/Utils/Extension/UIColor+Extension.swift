@@ -17,8 +17,18 @@ extension UIColor {
     static let contentTextColor = UIColor(named: "contentTextColor") ?? .lightGray
     static let deleteButtonBackgroundColor = UIColor(named: "deleteButtonBackgroundColor") ?? .systemPink
 
-    // Category
+    // Categories
     static let business = UIColor(named: "business") ?? .green
+    static let education = UIColor(named: "education") ?? .magenta
+    static let entertainment = UIColor(named: "entertainment") ?? .blue.withAlphaComponent(0.5)
+    static let fashion = UIColor(named: "fashion") ?? .magenta.withAlphaComponent(0.2)
+    static let food = UIColor(named: "food") ?? .blue
+    static let general = UIColor(named: "general") ?? .purple
+    static let health = UIColor(named: "health") ?? .systemPink
+    static let religion = UIColor(named: "religion") ?? .systemBlue.withAlphaComponent(0.8)
+    static let science = UIColor(named: "science") ?? .yellow
+    static let sport = UIColor(named: "sport") ?? .systemGreen
+    static let technology = UIColor(named: "technology") ?? .darkGray
 }
 
 extension UIColor {

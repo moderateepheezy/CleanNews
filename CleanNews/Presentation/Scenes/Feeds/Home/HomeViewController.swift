@@ -16,8 +16,15 @@ final class HomeViewController: BaseViewController<HomeView> {
     }
 
     enum HomeItem: Hashable {
-        case topNews(Int)
-        case latestNews(Int)
+        case topNews(FeedsListItemViewModel)
+        case latestNews(FeedsListItemViewModel)
+    }
+
+    // MARK: - LifeCycle
+
+    init(view: HomeView, viewModel: HomeViewModelType) {
+        self.viewModel = viewModel
+        super.init(view: view)
     }
 
     override func viewDidLoad() {
@@ -25,6 +32,7 @@ final class HomeViewController: BaseViewController<HomeView> {
         customView.collectionView.delegate = self
         setupNavigationItem()
         makeDiffableDataSource()
+        viewModel.viewDidLoad()
     }
 
     override func addViewControllerBehaviors() {
@@ -38,20 +46,52 @@ final class HomeViewController: BaseViewController<HomeView> {
 
     // MARK: - Private
 
+    private var viewModel: HomeViewModelType
     private(set) var dataSource: UICollectionViewDiffableDataSource<HomeSection, HomeItem>!
+    private var snapshot = NSDiffableDataSourceSnapshot<HomeSection, HomeItem>()
+    private let refreshControl = UIRefreshControl()
+
+    override func bindViews() {
+        customView.collectionView.refreshControl = refreshControl
+    }
+
+    override func setupViewActions() {}
+
+    override func bindViewModel() {
+        viewModel.newsListItems.observe(on: self) { [weak self] items in
+            guard let self = self, let items = items else { return }
+            self.snapshot.appendSections([.latestNews])
+            self.snapshot.appendItems(items.map { HomeItem.latestNews($0) }, toSection: .latestNews)
+            self.dataSource.apply(self.snapshot)
+        }
+        viewModel.newsHeaderListItems.observe(on: self) { [weak self] items in
+            guard let self = self, let items = items else { return }
+            self.snapshot.appendSections([.topNews])
+            self.snapshot.appendItems(items.map { HomeItem.topNews($0) }, toSection: .topNews)
+            self.dataSource.apply(self.snapshot)
+        }
+        viewModel.loading.observe(on: self) { [weak self] state in
+            switch state {
+            case .fullScreen, .nextPage:
+                self?.refreshControl.beginRefreshing()
+            default:
+                self?.refreshControl.endRefreshing()
+            }
+        }
+    }
 
     private func makeDiffableDataSource() {
         let dataSource = UICollectionViewDiffableDataSource<HomeSection, HomeItem>(
             collectionView: customView.collectionView
         ) { (collectionView: UICollectionView, indexPath: IndexPath, item: HomeItem) -> UICollectionViewCell? in
             switch item {
-            case .topNews:
+            case let .topNews(item):
                 let cell = collectionView.dequeueCell(ofType: FeedsCell.self, for: indexPath)
-                cell.setupWith(size: .medium)
+                cell.setupWith(size: .medium, feedsListItemViewModel: item)
                 return cell
-            case .latestNews:
+            case let .latestNews(item):
                 let cell = collectionView.dequeueCell(ofType: FeedsCell.self, for: indexPath)
-                cell.setupWith(size: .regular)
+                cell.setupWith(size: .regular, feedsListItemViewModel: item)
                 return cell
             }
         }
@@ -68,15 +108,6 @@ final class HomeViewController: BaseViewController<HomeView> {
         }
 
         self.dataSource = dataSource
-
-        var snapshot = NSDiffableDataSourceSnapshot<HomeSection, HomeItem>()
-
-        snapshot.appendSections([.topNews])
-        snapshot.appendItems(Array(1 ... 5).map { HomeItem.topNews($0) }, toSection: .topNews)
-
-        snapshot.appendSections([.latestNews])
-        snapshot.appendItems(Array(1 ... 30).map { HomeItem.latestNews($0) }, toSection: .latestNews)
-
         dataSource.apply(snapshot)
     }
 

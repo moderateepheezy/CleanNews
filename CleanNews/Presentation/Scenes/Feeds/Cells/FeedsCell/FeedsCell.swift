@@ -12,8 +12,8 @@ final class FeedsCell: CollectionViewCell {
 
     private enum Constants {
         static let containerRadius: CGFloat = 8
-        static let feedImageRegularHeight: CGFloat = 130
-        static let feedImageMediumHeight: CGFloat = 180
+        static let feedImageRegularHeight: CGFloat = 160
+        static let feedImageMediumHeight: CGFloat = 200
         static let feedImageCornerRadius: CGFloat = 8
         static let captionLabelTopInset: CGFloat = 8
         static let spacing: CGFloat = 16
@@ -31,6 +31,7 @@ final class FeedsCell: CollectionViewCell {
     private let feedImageView = UIImageView.create {
         $0.backgroundColor = .secondaryBackgroundColor
         $0.clipsToBounds = true
+        $0.contentMode = .scaleAspectFill
     }.applyCornerRadius(Constants.feedImageCornerRadius)
 
     private let feedTitleLabel = UILabel.create {
@@ -92,11 +93,12 @@ final class FeedsCell: CollectionViewCell {
         backgroundColor = .primaryBackgroundColor
     }
 
-    func setupWith(size: FeedsCell.Size) {
+    func setupWith(size: FeedsCell.Size, feedsListItemViewModel: FeedsListItemViewModel) {
         setSize(size)
-        feedTitleLabel.text = "A road map for grinding and finishing stainless steel"
-        captionLabel.text = "Usam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea aki"
-        feedSourceInformationView.setupWith(imageURL: "", sourceName: "VNN News", category: "Business", categoryColor: .business)
-        feedInteractiveView.setupWith(time: "1 hr ago")
+        feedTitleLabel.text = feedsListItemViewModel.newsTitle
+        captionLabel.text = feedsListItemViewModel.content
+        feedSourceInformationView.setupWith(feedsListItemViewModel: feedsListItemViewModel)
+        feedInteractiveView.setupWith(time: feedsListItemViewModel.dateTime)
+        feedImageView.load(url: feedsListItemViewModel.newsImageURL)
     }
 }

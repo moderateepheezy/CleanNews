@@ -8,9 +8,11 @@
 import Foundation
 
 final class AppConfiguration {
-    lazy var apiKey: String = {
-        return CleanNewsSecrets.apiKey.value(in: environment)
-    }()
+    lazy var apiKey: String = CleanNewsSecrets.apiKey.value(in: environment)
+
+    var newDataBaseUrlString: String {
+        "https://newsdata.io/api/1/news"
+    }
 
     private let environment: Environment
 

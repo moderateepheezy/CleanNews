@@ -100,7 +100,7 @@ final class BookmarkCell: CollectionViewCell {
     }
 
     func setupWith(title: String) {
-        feedSourceInformationView.setupWith(imageURL: "", sourceName: "VNN News", category: "International", categoryColor: .random())
+        // feedSourceInformationView.setupWith(feedsListItemViewModel: FeedsListItemViewModel)
         feedTitleLabel.text = title
         feedInteractiveView.setupWith(time: "9 hrs ago", excludingActions: [.bookmark])
     }

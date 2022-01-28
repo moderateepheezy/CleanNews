@@ -13,7 +13,6 @@ final class FeedDetailsViewController: BaseViewController<FeedDetailsView> {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationItem()
-        customView.setupWith()
     }
 
     override func addViewControllerBehaviors() {
