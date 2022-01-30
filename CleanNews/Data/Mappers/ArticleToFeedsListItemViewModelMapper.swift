@@ -45,14 +45,28 @@ final class ArticleToFeedsListItemViewModelMapper {
     }
 
     private func getCategory(from categories: [Categories]?) -> Category {
-        for cat in categories ?? [] {
-            for cas in Category.allCases {
-                if let url = cat.label, url.lowercased().contains(cas.rawValue.lowercased()) {
-                    return cas
-                }
-            }
+        guard let allPaths = categories?.compactMap(\.uri).joined(separator: "/").lowercased() else {
+            return .general
         }
-        return .business
+
+        let categoriesFromPath = allPaths.split(separator: "/").map { String($0) }
+        var alFoundcategories: [Category?] = []
+        for categoryPath in categoriesFromPath {
+            let category = Category.allCases
+                .first(where: {
+                    $0.rawValue == categoryPath.lowercased() || categoryPath.contains($0.rawValue)
+
+                })
+            alFoundcategories.append(category)
+        }
+
+        let categoryWithHighestOccurrence = alFoundcategories.compactMap { $0 }.reduce([Category: Int]()) {
+            var counts = $0
+            counts[$1] = ($0[$1] ?? 0) + 1
+            return counts
+        }.max(by: { $0.1 < $1.1 })?.0
+
+        return categoryWithHighestOccurrence ?? .general
     }
 
     private func getTimeAgo(date: Date?) -> String {

@@ -29,6 +29,7 @@ extension UIColor {
     static let science = UIColor(named: "science") ?? .yellow
     static let sport = UIColor(named: "sport") ?? .systemGreen
     static let technology = UIColor(named: "technology") ?? .darkGray
+    static let politics = UIColor(named: "politics") ?? .cyan
 }
 
 extension UIColor {

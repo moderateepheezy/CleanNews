@@ -9,8 +9,9 @@ import Foundation
 import UIKit
 
 enum Category: String, CaseIterable {
-    case business
     case general
+    case business
+    case politics
     case entertainment
     case health
     case science
@@ -20,13 +21,12 @@ enum Category: String, CaseIterable {
     case fashion
     case food
     case religion
-    case unknown
 
     init(rawCategory: String) {
         if let category = Category(rawValue: rawCategory.lowercased()) {
             self = category
         } else {
-            self = .unknown
+            self = .general
         }
     }
 
@@ -58,8 +58,8 @@ enum Category: String, CaseIterable {
             return .food
         case .religion:
             return .religion
-        case .unknown:
-            return .clear
+        case .politics:
+            return .politics
         }
     }
 }

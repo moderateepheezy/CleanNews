@@ -66,8 +66,8 @@ final class CategoryCell: CollectionViewCell {
         backgroundColor = .primaryColor
     }
 
-    func setupWith(title: String, color: UIColor) {
-        categoryTitleLabel.text = title
-        categoryColor = color
+    func setupWith(category: Category) {
+        categoryTitleLabel.text = category.name
+        categoryColor = category.color
     }
 }

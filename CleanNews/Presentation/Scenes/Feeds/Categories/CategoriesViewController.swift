@@ -15,7 +15,7 @@ final class CategoriesViewController: BaseViewController<CategoriesView> {
     }
 
     enum CategoriesItem: Hashable {
-        case category(String)
+        case category(Category)
     }
 
     override func viewDidLoad() {
@@ -45,7 +45,7 @@ final class CategoriesViewController: BaseViewController<CategoriesView> {
             switch item {
             case let .category(category):
                 let cell = collectionView.dequeueCell(ofType: CategoryCell.self, for: indexPath)
-                cell.setupWith(title: category, color: .random())
+                cell.setupWith(category: category)
                 return cell
             }
         }
@@ -55,7 +55,7 @@ final class CategoriesViewController: BaseViewController<CategoriesView> {
         var snapshot = NSDiffableDataSourceSnapshot<CategoriesSection, CategoriesItem>()
 
         snapshot.appendSections([.categories])
-        snapshot.appendItems(Array(1 ... 10).map { CategoriesItem.category("Business \($0)") }, toSection: .categories)
+        snapshot.appendItems(Category.allCases.map { CategoriesItem.category($0) }, toSection: .categories)
 
         dataSource.apply(snapshot)
     }
