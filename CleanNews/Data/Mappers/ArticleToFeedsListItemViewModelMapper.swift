@@ -36,11 +36,24 @@ final class ArticleToFeedsListItemViewModelMapper {
     }
 
     private func getSummary(_ summary: BreakingNewsResponse.Article.Summary?) -> String {
-        summary?.eng ?? summary?.spa ?? summary?.por ?? ""
+        let eng = summary?.eng
+        let spa = summary?.spa
+        let por = summary?.por
+        let pol = summary?.pol
+        let deu = summary?.deu
+        let rus = summary?.rus
+        let content = eng ?? spa ?? por ?? pol ?? deu ?? rus ?? ""
+        return content
     }
 
     private func getSource(_ info: BreakingNewsResponse.Article.InfoArticle?) -> (name: String, host: String) {
-        let source = info?.eng?.source ?? info?.spa?.source ?? info?.por?.source
+        let eng = info?.eng?.source
+        let spa = info?.spa?.source
+        let por = info?.por?.source
+        let pol = info?.pol?.source
+        let deu = info?.deu?.source
+        let rus = info?.rus?.source
+        let source = eng ?? spa ?? por ?? pol ?? deu ?? rus
         return (name: source?.title ?? "", host: source?.uri ?? "")
     }
 
@@ -50,21 +63,28 @@ final class ArticleToFeedsListItemViewModelMapper {
         }
 
         let categoriesFromPath = allPaths.split(separator: "/").map { String($0) }
-        var alFoundcategories: [Category?] = []
-        for categoryPath in categoriesFromPath {
-            let category = Category.allCases
-                .first(where: {
-                    $0.rawValue == categoryPath.lowercased() || categoryPath.contains($0.rawValue)
 
-                })
-            alFoundcategories.append(category)
-        }
+        let alFoundcategories = categoriesFromPath
+            .filter { categoryPath in
+                Category.allCases
+                    .contains(where: {
+                        $0.rawValue == categoryPath || categoryPath.contains($0.rawValue)
+                    })
+            }
+            .compactMap { categoryPath in
+                Category.allCases
+                    .first(where: {
+                        $0.rawValue == categoryPath || categoryPath.contains($0.rawValue)
+                    })
+            }
 
-        let categoryWithHighestOccurrence = alFoundcategories.compactMap { $0 }.reduce([Category: Int]()) {
-            var counts = $0
-            counts[$1] = ($0[$1] ?? 0) + 1
-            return counts
-        }.max(by: { $0.1 < $1.1 })?.0
+        let categoryWithHighestOccurrence = alFoundcategories
+            .compactMap { $0 }
+            .reduce([Category: Int]()) {
+                var counts = $0
+                counts[$1] = ($0[$1] ?? 0) + 1
+                return counts
+            }.max(by: { $0.1 < $1.1 })?.0
 
         return categoryWithHighestOccurrence ?? .general
     }

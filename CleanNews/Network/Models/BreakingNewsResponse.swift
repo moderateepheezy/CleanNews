@@ -32,11 +32,11 @@ struct BreakingNewsResponse: Decodable {
         let images: [String]?
 
         struct Summary: Decodable {
-            let spa, por, eng: String?
+            let spa, por, eng, deu, pol, rus: String?
         }
 
         struct InfoArticle: Decodable {
-            let spa, por, eng: Eng?
+            let spa, por, eng, deu, pol, rus: Eng?
         }
 
         // MARK: - Eng
