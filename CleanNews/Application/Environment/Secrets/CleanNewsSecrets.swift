@@ -16,7 +16,7 @@ enum CleanNewsSecrets: AppSecrets {
         switch environment {
         case .labour:
             return value(for: AppDevSecrets.self)
-        case .alpha:
+        case .alpha, .production:
             return value(for: AppProdSecrets.self)
         }
     }

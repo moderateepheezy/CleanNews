@@ -1,22 +1,17 @@
 //
-//  NetworkService.swift
-//  CleanNews
+//  NetworkServiceMock.swift
+//  CleanNewsTests
 //
-//  Created by Afees Lawal on 15.01.22.
+//  Created by Afees Lawal on 03.02.22.
 //
 
+@testable import CleanNews
 import Foundation
-import Moya
 
-protocol NetworkService {
-    typealias NetworkRequestCompletion<T> = (Swift.Result<T, Error>) -> Void
-    func request<T: Decodable>(endpoint: Endpoint, completion: @escaping NetworkRequestCompletion<T>)
-}
+final class NetworkServiceMock: NetworkService {
+    private let provider: NetworkRequestProviderMock
 
-class CleanNetworkService: NetworkService {
-    private let provider: NetworkRequestProvider
-
-    init(provider: NetworkRequestProvider) {
+    init(provider: NetworkRequestProviderMock) {
         self.provider = provider
     }
 

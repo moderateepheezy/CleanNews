@@ -18,7 +18,10 @@ final class FeedsCoordinator {
     }
 
     func start() {
-        let viewController = container.makeHomeViewController()
-        navigationController?.pushViewController(viewController, animated: false)
+        let homeRoutes = container.makeHomeRoutes()
+        homeRoutes.onBackPressed = {}
+        navigationController?.pushViewController(homeRoutes.viewController, animated: false)
     }
 }
+
+extension FeedsCoordinator: HomeViewControllerDelegate {}

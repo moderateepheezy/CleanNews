@@ -7,20 +7,19 @@
 
 import Foundation
 
-protocol NewsListUseCase {
-    func execute(requestType: NewsRequestType, completion: @escaping (Result<NewsItem, Error>) -> Void)
-}
+final class NewsListUseCase {
+    typealias Params = NewsRequestType
+    typealias Response = NewsItem
 
-final class DefaultNewsListUseCase: NewsListUseCase {
     private let newsRepository: NewsRepository
 
     init(newsRepository: NewsRepository) {
         self.newsRepository = newsRepository
     }
+}
 
-    func execute(requestType: NewsRequestType, completion: @escaping (Result<NewsItem, Error>) -> Void) {
-        newsRepository.fetchNews(requestType: requestType) { result in
-            completion(result)
-        }
+extension NewsListUseCase: UseCase {
+    func execute(with params: Params, completion: @escaping Completion<Response>) {
+        newsRepository.fetchNews(requestType: params, completion: completion)
     }
 }

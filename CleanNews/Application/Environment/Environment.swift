@@ -10,6 +10,7 @@ import Foundation
 enum Environment {
     case labour
     case alpha
+    case production
 
     init() {
         switch ConfigEnvironment(rawValue: getCurrentConfig()) {
@@ -17,6 +18,8 @@ enum Environment {
             self = .alpha
         case .debugLabour, .releaseLabour:
             self = .labour
+        case .productionDebug, .productionRelease:
+            self = .production
         default:
             fatalError("Must have a configuration scheme for Alpha or Labour")
         }
@@ -28,6 +31,9 @@ enum Environment {
 
         case debugAlpha = "Debug Alpha"
         case releaseAlpha = "Release Alpha"
+
+        case productionDebug = "CleanNews Debug"
+        case productionRelease = "CleanNews Release"
     }
 }
 

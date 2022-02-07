@@ -22,7 +22,7 @@ protocol HomeVieWModelOutput {
     var newsListItems: Observable<[FeedsListItemViewModel]?> { get }
     var newsHeaderListItems: Observable<[FeedsListItemViewModel]?> { get }
     var loading: Observable<ViewModelLoadingState?> { get }
-    var error: Observable<String> { get }
+    var error: Observable<String?> { get }
 }
 
 protocol HomeViewModelType: HomeViewModelInput, HomeVieWModelOutput {}
@@ -31,15 +31,16 @@ final class HomeViewModel: HomeViewModelType {
     var newsListItems: Observable<[FeedsListItemViewModel]?> = Observable(.none)
     var newsHeaderListItems: Observable<[FeedsListItemViewModel]?> = Observable(.none)
     var loading: Observable<ViewModelLoadingState?> = Observable(.none)
-    var error: Observable<String> = Observable("")
+    var error: Observable<String?> = Observable(.none)
 
-    init(newsListUseCase: NewsListUseCase) {
+    init(newsListUseCase: NewsListUseCase, executor: UseCaseExecutor) {
         self.newsListUseCase = newsListUseCase
+        self.executor = executor
     }
 
     func viewDidLoad() {
         loading.value = .fullScreen
-        newsListUseCase.execute(requestType: .all(page: 1)) { result in
+        executor.execute(newsListUseCase, with: .all(page: 1)) { result in
             switch result {
             case let .success(response):
                 self.newsListItems.value = response.feedListItemViewModels
@@ -49,7 +50,7 @@ final class HomeViewModel: HomeViewModelType {
             self.loading.value = .none
         }
 
-        newsListUseCase.execute(requestType: .heading) { result in
+        executor.execute(newsListUseCase, with: .all(page: 1)) { result in
             switch result {
             case let .success(response):
                 self.newsHeaderListItems.value = response.feedListItemViewModels
@@ -66,4 +67,5 @@ final class HomeViewModel: HomeViewModelType {
     // MARK: - Private
 
     private let newsListUseCase: NewsListUseCase
+    private let executor: UseCaseExecutor
 }

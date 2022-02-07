@@ -13,7 +13,9 @@ struct BreakingNewsResponse: Decodable {
     enum CodingKeys: String, CodingKey {
         case events = "breakingEvents"
     }
+}
 
+extension BreakingNewsResponse {
     struct Events: Decodable {
         let articles: [BreakingNewsResponse.Article]
 
@@ -30,21 +32,21 @@ struct BreakingNewsResponse: Decodable {
         let infoArticle: InfoArticle?
         let categories: [Categories]?
         let images: [String]?
+    }
+}
 
-        struct Summary: Decodable {
-            let spa, por, eng, deu, pol, rus: String?
-        }
+extension BreakingNewsResponse.Article {
+    struct Summary: Decodable {
+        let spa, por, eng, deu, pol, rus: String?
+    }
 
-        struct InfoArticle: Decodable {
-            let spa, por, eng, deu, pol, rus: Eng?
-        }
+    struct InfoArticle: Decodable {
+        let spa, por, eng, deu, pol, rus: Eng?
+    }
 
-        // MARK: - Eng
-
-        struct Eng: Decodable {
-            let dateTime, dateTimePub: Date?
-            let url: String
-            let source: NewsSource?
-        }
+    struct Eng: Decodable {
+        let dateTime, dateTimePub: Date?
+        let url: String
+        let source: NewsSource?
     }
 }

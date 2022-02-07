@@ -7,8 +7,19 @@
 
 import UIKit
 
-final class HomeViewController: BaseViewController<HomeView> {
+protocol HomeViewControllerDelegate: AnyObject {}
+
+protocol HomeRoutes: ViewControllerRoutes {
+    var onBackPressed: (() -> Void)? { get set }
+    var homeViewControllerDelegate: HomeViewControllerDelegate? { get set }
+}
+
+final class HomeViewController: BaseViewController<HomeView>, HomeRoutes {
     // MARK: - Internal
+
+    var onBackPressed: (() -> Void)?
+
+    weak var homeViewControllerDelegate: HomeViewControllerDelegate?
 
     enum HomeSection: CaseIterable {
         case topNews

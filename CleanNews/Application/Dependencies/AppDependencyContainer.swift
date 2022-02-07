@@ -17,12 +17,17 @@ final class AppDependencyContainer {
     // MARK: - Internal
 
     func makeFeedsDIContainer() -> FeedsDIContainer {
-        FeedsDIContainer(networkService: nerworkService, appConfiguration: appConfiguration)
+        FeedsDIContainer(
+            networkService: nerworkService,
+            appConfiguration: appConfiguration,
+            useCaseExecutor: useCaseExecutor
+        )
     }
 
     // MARK: - Private
 
     private lazy var appConfiguration = AppConfiguration(environment: environment)
-    private lazy var nerworkService: NetworkService = CleanNetworkService(apiKey: appConfiguration.apiKey)
+    private lazy var nerworkService: NetworkService = CleanNetworkService(provider: MoyaNetworkRequestProvider())
+    private lazy var useCaseExecutor: UseCaseExecutor = DefaultUseCaseExecutor()
     private let environment: Environment
 }
